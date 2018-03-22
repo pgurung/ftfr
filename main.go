@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"io/ioutil"
 	"log"
 	"os"
@@ -21,8 +20,7 @@ func read(s []string) []byte {
 	src, err := ioutil.ReadFile(s[0])
 
 	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
+		log.Fatal(err)
 	}
 
 	return src
@@ -34,8 +32,7 @@ func write(b []byte, ss []string) {
 	err := ioutil.WriteFile(ss[1], b, 0666)
 
 	if err != nil {
-		fmt.Println(err)
-		os.Exit(1)
+		log.Fatal(err)
 	}
 }
 
@@ -47,6 +44,5 @@ func createDir(ss []string) {
 	err := os.MkdirAll(path, 0777)
 	if err != nil {
 		log.Fatal(err)
-		os.Exit(1)
 	}
 }
