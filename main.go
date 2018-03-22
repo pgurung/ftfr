@@ -43,7 +43,7 @@ func write(b []byte, ss []string) {
 func createDir(ss []string) {
 	ps := strings.Split(ss[1], "/")
 	path := filepath.Join(ps[:len(ps)-1]...)
-	fmt.Println(path)
+
 	err := os.MkdirAll(path, 0777)
 	if err != nil {
 		log.Fatal(err)
