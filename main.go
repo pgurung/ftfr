@@ -46,6 +46,10 @@ func createDir(ss []string) {
 		sep = "/"
 	}
 	ps := strings.Split(ss[1], sep)
+
+	if len(ps) == 1 {
+		return
+	}
 	path := filepath.Join(ps[:len(ps)-1]...)
 
 	err := os.MkdirAll(path, 0777)
