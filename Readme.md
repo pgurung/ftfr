@@ -4,11 +4,11 @@ Transfer any file on your computer from one place to another.
 
 ## Installation
 
-`go get github.com/pgurung/ftfr`
+`$ go get github.com/pgurung/ftfr`
 
 ## Usuage
 
-`$ filetransfer "Source filename" "Destination folder/filename"`
+`$ ftfr "Source filename" "Destination folder/filename"`
 \*If the destination folder does not exist a new folder with the name specified will be created.
 
 ## Limitations
