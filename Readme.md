@@ -1,4 +1,4 @@
-# Filetransfer
+# ftfr - Filetransfer
 
 Transfer any file on your computer from one place to another.
 
