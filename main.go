@@ -5,6 +5,7 @@ import (
 	"log"
 	"os"
 	"path/filepath"
+	"runtime"
 	"strings"
 )
 
@@ -38,7 +39,13 @@ func write(b []byte, ss []string) {
 
 //Parse the second argument and create any directory necessary
 func createDir(ss []string) {
-	ps := strings.Split(ss[1], "/")
+	var sep string
+	if runtime.GOOS == "windows" {
+		sep = "\\"
+	} else {
+		sep = "/"
+	}
+	ps := strings.Split(ss[1], sep)
 	path := filepath.Join(ps[:len(ps)-1]...)
 
 	err := os.MkdirAll(path, 0777)
